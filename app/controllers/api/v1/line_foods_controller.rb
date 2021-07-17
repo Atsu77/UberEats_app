@@ -38,7 +38,7 @@ module Api
 
       def replace
         LineFood.active.other_restaurant(@ordered_food.restaurant.id).each do |line_food|
-          line_food.update(:active, false)
+          line_food.update(active: false)
         end
 
         set_line_food(@ordered_food)
